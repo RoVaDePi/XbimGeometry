@@ -68,26 +68,26 @@ jobs:
   # Version .NET Core project files
   # Description - Applies a version to a .NET Core assembly via the .csproj files based on the build number. 
   # Based on https://github.com/rfennell/AzurePipelines/wiki/Version-Assemblies-and-Packages-Tasks-YAML#versiondotnetcoreassembliestask
-  - task: VersionDotNetCoreAssemblies@2
-    displayName: 'Update netcore FileVersions'
-    inputs: 
-      # Required arguments
-      Path: $(Build.SourcesDirectory)
-      VersionNumber: $(fileversion)
-      VersionRegex: \d+\.\d+\.\d+\.\d+
-      FilenamePattern: .csproj
-      Field: fileversion
-      OutputVersion: OutputedVersion
-  - task: VersionDotNetCoreAssemblies@2
-    displayName: 'Update global Versions'
-    inputs: 
-      # Required arguments
-      Path: $(Build.SourcesDirectory)
-      VersionNumber: $(packageversion)
-      VersionRegex: \d+\.\d+\.\d+.*
-      FilenamePattern: directory.build.props
-      Field: Version
-      OutputVersion: OutputedVersion
+#  - task: VersionDotNetCoreAssemblies@2
+#    displayName: 'Update netcore FileVersions'
+#    inputs: 
+#      # Required arguments
+#      Path: $(Build.SourcesDirectory)
+#      VersionNumber: $(fileversion)
+#      VersionRegex: \d+\.\d+\.\d+\.\d+
+#      FilenamePattern: .csproj
+#      Field: fileversion
+#      OutputVersion: OutputedVersion
+#  - task: VersionDotNetCoreAssemblies@2
+#    displayName: 'Update global Versions'
+#    inputs: 
+#      # Required arguments
+#      Path: $(Build.SourcesDirectory)
+#      VersionNumber: $(packageversion)
+#      VersionRegex: \d+\.\d+\.\d+.*
+#      FilenamePattern: directory.build.props
+#      Field: Version
+#      OutputVersion: OutputedVersion
   
   # Version Native C++ app.rc
   - powershell: |
